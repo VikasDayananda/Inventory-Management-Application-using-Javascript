@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+    <form id="itemDesc"onsubmit="" method="get">
+
+        <h3>Item information</h3>
+        <label for="name" class="ui-hidden-accessible">Item Name:</label>
+        <input type="text" name="name" id="name" placeholder=""/><br/>
+        <label for="stk" class="ui-hidden-accessible">Stock:</label>
+        <input type="text" name="stk" id="stk" placeholder=""/><br/>
+        <label for="pc" class="ui-hidden-accessible">Price:</label>
+        <input type="text" name="pc" id="pc" placeholder=""/><br/>
+        <label for="cat" class="ui-hidden-accessible">Category:</label>
+        <input type="text" name="cat" id="cat" placeholder=""/><br/>
+        <button id="button" type="button" onclick="addItem()" >Add</button>
+    </form>
+</div>
+</body>
+</html>

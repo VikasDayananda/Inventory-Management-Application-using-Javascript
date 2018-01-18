@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <!-- Optional Bootstrap theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/main.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Inventory Management</title>
+    <style>
+        #popup-form {
+            display: none;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<h1>Inventory Management using Javascript objects</h1><br><br>
+<div class="container" id="">
+<h3>Current Items in the inventory <button onclick="myFunction()" >Add</button><button onclick= " myFunction2()" >Buy</button></h3>
+
+
+    <div class="popup" >
+        <form class="popuptext" id="itemDesc">
+            <h3>Item information</h3>
+            <label for="name" class="ui-hidden-accessible">Item Name:</label>
+            <input type="text" name="name" id="name" placeholder=""/><br/>
+            <label for="stk" class="ui-hidden-accessible">Stock:</label>
+            <input type="text" name="stk" id="stk" placeholder=""/><br/>
+            <label for="pc" class="ui-hidden-accessible">Price:</label>
+            <input type="text" name="pc" id="pc" placeholder=""/><br/>
+            <label for="cat" class="ui-hidden-accessible">Category:</label>
+            <input type="text" name="cat" id="cat" placeholder=""/><br/>
+            <button id="button" type="button" onclick="addItem()" >Add</button></form>
+    </div>
+    <div class="popup" >
+        <form class="popuptext" id="buyItem">
+            <h3>Item information</h3>
+            <label for="name" class="ui-hidden-accessible">Item Name:</label>
+            <input type="text" name="name" id="name" placeholder=""/><br/>
+            <label for="stk" class="ui-hidden-accessible">Quantity:</label>
+            <input type="text" name="stk" id="stk" placeholder=""/><br/>
+            <button id="button" type="button" onclick="buyItem()" >Buy</button></form>
+    </div>
+
+    <script>
+        // When the user clicks on div, open the popup
+        function myFunction() {
+            var popup = document.getElementById("itemDesc");
+            popup.classList.add("show");
+        }
+        function myFunction2() {
+            var popup = document.getElementById("buyItem");
+            popup.classList.add("show");
+        }
+    </script>
+
+
+<script>
+
+//            $(document).ready(function() {
+//                $("#itemDesc").submit(function() {
+
+function Test(action,id,index)
+{
+    var popup = document.getElementById("itemDesc");
+    popup.classList.remove("show");
+    if(action=="add") {
+
+        var n = objects.length - 1;
+        var testDiv = document.createElement("div");
+        testDiv.id = objects[n].item;
+        testDiv.className = "col-sm-3 col-md-6 col-lg-4 items";
+        testDiv.innerHTML += '<p> Item: ' + objects[n].item + '<br>Stock:' + objects[n].quantity + '<br>Price:' + objects[n].price + '<br>Category:' + objects[n].category + '</p>';
+        var itemsDiv = document.getElementById('items');
+        itemsDiv.appendChild(testDiv);
+    }else{
+
+        document.getElementById(id).innerHTML =  '<p> Item: ' + objects[index].item + '<br>Stock:' + objects[index].quantity + '<br>Price:' + objects[index].price + '<br>Category:' + objects[index].category + '</p>';
+    }
+
+        }
+</script>
+
+
+    <div class="row" id="items" style="display: block;">
+
+
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
